@@ -70,7 +70,7 @@ class e3_un_sac_covariant extends HandsOnSuite {
   }
 
 
-  exercice("Un peu comme avant, l'application de fonction dans le conteneur") {
+  exercise("Un peu comme avant, l'application de fonction dans le conteneur") {
     val petitSacDeZero = Sac(0)
 
     petitSacDeZero.map(x => x + 1) match {
@@ -84,7 +84,7 @@ class e3_un_sac_covariant extends HandsOnSuite {
 
 
 
-  exercice("La combinaison de Sac") {
+  exercise("La combinaison de Sac") {
 
     val petitSacDeZero = Sac(0)
 
@@ -100,7 +100,7 @@ class e3_un_sac_covariant extends HandsOnSuite {
     }
   }
 
-  exercice("Le filtrage") {
+  exercise("Le filtrage") {
     val petitSacDeZero = Sac(0)
 
     assert(petitSacDeZero.filter(x => x > 1).isEmpty)

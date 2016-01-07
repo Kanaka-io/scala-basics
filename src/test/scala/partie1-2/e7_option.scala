@@ -26,34 +26,34 @@ class e7_option extends HandsOnSuite {
   /**
   * Quelques tests rapides
   */
-  exercice("None est égal à...None") {
+  exercise("None est égal à...None") {
    None should be(__)
   }
 
-  exercice("None est identique à None") {
+  exercise("None est identique à None") {
     val a = None
     // ici on dénote le fait d’être identique, et == l’égalité
     a should be(__)
   }
 
-  exercice("None est considéré comme vide") {
+  exercise("None est considéré comme vide") {
     None.isEmpty should be(__)
   }
 
 
-  exercice("None peut être utilisé avec le type Option, plutôt qu’avec null") {
+  exercise("None peut être utilisé avec le type Option, plutôt qu’avec null") {
     val optional: Option[String] = None
     optional.isEmpty should be(__)
     optional should be(__)
   }
 
-  exercice("Some est le complémentaire de None pour le type Option") {
+  exercise("Some est le complémentaire de None pour le type Option") {
     val optional: Option[String] = Some("Some Value")
     (optional == None) should be(__)
     optional.isEmpty should be(__)
   }
 
-  exercice("Option.getOrElse peut être utilisé pour obtenir une valeur par défaut dans le cas de None") {
+  exercise("Option.getOrElse peut être utilisé pour obtenir une valeur par défaut dans le cas de None") {
     val optional: Option[String] = Some("Some Value")
     val optional2: Option[String] = None
     optional.getOrElse("No Value") should be(__)

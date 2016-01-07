@@ -109,7 +109,7 @@ class e1_bonus_stream extends HandsOnSuite {
     def foreach(effetDeBord:A => Unit):Unit = {}
   }
 
-  exercice("création") {
+  exercise("création") {
 
     Stream() should be(EmptyStream)
 
@@ -117,12 +117,12 @@ class e1_bonus_stream extends HandsOnSuite {
 
   }
 
-  exercice("map") {
+  exercise("map") {
     Stream(1,2,3).map(x => x + 1) should be(Stream(2,3,4))
   }
 
 
-  exercice("union") {
+  exercise("union") {
 
     Stream(1,2,3).union(Stream(4,5)) should be(Stream(1,2,3,4,5))
 
@@ -136,7 +136,7 @@ class e1_bonus_stream extends HandsOnSuite {
 
   }
 
-  exercice("flatMap") {
+  exercise("flatMap") {
 
     val combinaison = for (a <- Stream("A","B"); i <- Stream(1,2)) yield (a + i)
 
@@ -144,14 +144,14 @@ class e1_bonus_stream extends HandsOnSuite {
 
   }
 
-  exercice("filter") {
+  exercise("filter") {
 
     Stream(1,2,3).filter(x => x > 1) should be(Stream(2,3))
 
     Stream(1,2,3).filter(x => false) should be(EmptyStream)
   }
 
-  exercice("lazyness") {
+  exercise("lazyness") {
 
     val s = Stream(1,2,3).map{
       case 1 => 1
@@ -165,7 +165,7 @@ class e1_bonus_stream extends HandsOnSuite {
 
   }
 
-  exercice("lazyness 2") {
+  exercise("lazyness 2") {
     val s:Stream[Int] = Stream(1,2,3).map{
       case 1 => 1
       case _ => {

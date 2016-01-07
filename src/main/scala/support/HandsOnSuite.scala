@@ -23,7 +23,7 @@ trait HandsOnSuite extends MyFunSuite with ShouldMatchers {
 
   def anchor[A](a:A):Unit = macro RecorderMacro.anchor[A]
 
-  def exercice(testName:String)(testFun: Unit)(implicit suite: MyFunSuite, anchorRecorder: AnchorRecorder):Unit = macro RecorderMacro.apply
+  def exercise(testName:String)(testFun: Unit)(implicit suite: MyFunSuite, anchorRecorder: AnchorRecorder):Unit = macro RecorderMacro.apply
 
 
 
@@ -45,10 +45,10 @@ trait HandsOnSuite extends MyFunSuite with ShouldMatchers {
 
       info( "Suite    : " + suite.replace("\n","") )
 
-      info( "Test     : " + test.replace("\n","") )
+      info( "Exercise : " + test.replace("\n","") )
 
       location.collect({ case f =>
-        info( "fichier  : " + f.replace("\n","") )
+      info( "File     : " + f.replace("\n","") )
       })
       message.collect({ case m =>
         info("")
@@ -95,10 +95,10 @@ trait HandsOnSuite extends MyFunSuite with ShouldMatchers {
               sendFail(failure, e.suiteName, e.testName)
       //pour les __ => avec context
             case Some(pending: MyTestPendingException) =>
-              sendPending(pending, e.suiteName, e.testName, Some("Vous devez remplacer les __ par les valeurs correctes"))
+              sendPending(pending, e.suiteName, e.testName, Some("You need to replace __ by the correct value"))
       //pour les ??? => sans context
             case Some(pending: MyNotImplException) =>
-              sendPending(pending, e.suiteName, e.testName, Some("Vous devez remplacer les ??? par les implémentations correctes"))
+              sendPending(pending, e.suiteName, e.testName, Some("You need to replace ??? by the correct implementation"))
       //pour les autres erreurs => avec stacktrace
             case Some(failure: MyException) =>
               sendFail(failure, e.suiteName, e.testName)

@@ -52,7 +52,7 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
   }
 
 
-  exercice("Je peux créer mon sac avec un seul entier, et faire des choses avec mon sac") {
+  exercise("Je peux créer mon sac avec un seul entier, et faire des choses avec mon sac") {
 
     val monPetitSacDeZero = Sac(0, Set("un portable") )
 
@@ -68,7 +68,7 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
 
   }
 
-  exercice("je peux appliquer une fonction à l'intérieur de mon sac") {
+  exercise("je peux appliquer une fonction à l'intérieur de mon sac") {
     /**
      *
      * Pour passer ce test il faut implémenter la fonction Map plus haut
@@ -86,7 +86,7 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
     monPetitSacDeZero.map(incrémente).items should contain("un portable")
   }
 
-  exercice("je peux appliquer une expression en for sur mon sac") {
+  exercise("je peux appliquer une expression en for sur mon sac") {
     /**
      * Ce test se base sur la fonction map implémentée précedement
      */
@@ -107,7 +107,7 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
 
   }
 
-  exercice("je peux appliquer une expression imbriquée dans mes Sac") {
+  exercise("je peux appliquer une expression imbriquée dans mes Sac") {
 
     /**
      * Ce test se base sur la fonction flatMap a implémenter plus haut.

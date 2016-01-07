@@ -59,13 +59,13 @@ class e2_un_sac_algebrique extends HandsOnSuite {
   }
 
 
-  exercice("toujours comme avant, je peux construire mon Sac")  {
+  exercise("toujours comme avant, je peux construire mon Sac")  {
     val s0 = Sac(0)    // appel de la fonction apply dans l'objet companion de Sac
                                          // un peu comme List(1,2,3)
 
   }
 
-  exercice("toujours comme avant, je peux appliquer une fonction à l'intérieur") {
+  exercise("toujours comme avant, je peux appliquer une fonction à l'intérieur") {
 
     val sacDeZero = Sac(0)
 
@@ -85,7 +85,7 @@ class e2_un_sac_algebrique extends HandsOnSuite {
     }
   }
 
-  exercice("toujours comme avant, je peux combiner mes sac") {
+  exercise("toujours comme avant, je peux combiner mes sac") {
     val sacDeDeux = Sac(2)
 
     val sacDeCent  = Sac(100)
@@ -108,7 +108,7 @@ class e2_un_sac_algebrique extends HandsOnSuite {
 
   }
 
-  exercice("on peut filter le contenu d'un sac") {
+  exercise("on peut filter le contenu d'un sac") {
 
     val sacDeDeux = Sac(2)
 

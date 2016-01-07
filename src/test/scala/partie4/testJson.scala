@@ -87,7 +87,7 @@ object Json{
 import Implicits._
 
 class testJson extends HandsOnSuite {
-  exercice("a Json tree should print itself"){
+  exercise("a Json tree should print itself"){
     val jsonString=JsString("json")
     val jsonNumber=JsNumber(int2Integer(10))
     val jsonSequece=JsSeq(Seq(JsString("a"), JsString("b"), JsString("c")))
@@ -103,31 +103,31 @@ class testJson extends HandsOnSuite {
 
     actual should equal(expected)
   }
-  exercice("toJson should correctly convert a String"){
+  exercise("toJson should correctly convert a String"){
     val expected=JsString("json")
     val actual=Json.toJson("json")
 
     actual should equal(expected)
   }
-  exercice("toJson should correctly convert an Integer"){
+  exercise("toJson should correctly convert an Integer"){
     val expected=JsNumber(12)
     val actual=Json.toJson(12)
 
     actual should equal(expected)
   }
-  exercice("toJson should correctly convert a Double"){
+  exercise("toJson should correctly convert a Double"){
     val expected=JsNumber(12.0)
     val actual=Json.toJson(12.0)
 
     actual should equal(expected)
   }
-  exercice("toJson should correctly convert a BigDecimal"){
+  exercise("toJson should correctly convert a BigDecimal"){
     val expected=JsNumber(BigDecimal("99999999999999999999999999999999999999999999999999999999999999999999999999"))
     val actual=Json.toJson(BigDecimal("99999999999999999999999999999999999999999999999999999999999999999999999999"))
 
     actual should equal(expected)
   }
-  exercice("toJson should correctly convert a Sequence of strings"){
+  exercise("toJson should correctly convert a Sequence of strings"){
     val expected=JsSeq(Seq(JsString("a"),JsString("b"),JsString("c")))
     val actual=Json.toJson(Seq("a","b","c"))
 
@@ -151,7 +151,7 @@ package client {
 
   import User.userWrite
   class testJsonClient extends HandsOnSuite {
-    exercice("toJson should correctly convert a user"){
+    exercise("toJson should correctly convert a user"){
       val user = User("Mathieu", 25, Seq("Jean","Jon","Ludwine"))
 
       val expected=JsObject(Map("name"->JsString("Mathieu"), "age"->JsNumber(25), "friends"->JsSeq(Seq(JsString("Jean"),JsString("Jon"),JsString("Ludwine")))))

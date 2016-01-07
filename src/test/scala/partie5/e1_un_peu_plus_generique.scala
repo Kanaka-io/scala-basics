@@ -15,14 +15,14 @@ class e1_un_peu_plus_generique  extends  HandsOnSuite {
   }
 
 
-  exercice("Un peu comme avant, l'application de fonction dans le conteneur") {
+  exercise("Un peu comme avant, l'application de fonction dans le conteneur") {
     val petitSacDeZero = Sac(0,Set("un portable"))
 
     petitSacDeZero.map(x => x + 1).valeur should be(1)
 
   }
 
-  exercice("La combinaison de Sac") {
+  exercise("La combinaison de Sac") {
 
     val petitSacDeZero = Sac(0,Set("un portable"))
 

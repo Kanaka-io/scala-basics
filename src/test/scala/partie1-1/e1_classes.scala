@@ -3,59 +3,60 @@ package premiers_pas
 import support.HandsOnSuite
 
 /**
-*  Pour définir une classe en Scala, on utilise le mot-clé 'class'.
-*  A l'intérieur d'une classe, on peut définir des champs et des méthodes.
-*  Par défaut une classe est 'public' et on a pas besoin de le spécifier.
-*  Jusque là rien d'extraordinaire...
-*
-*  Il y a quand même quelques petites particularités :
-*     - il est possible de passer des paramètres val/var dans une classe (voir l'exemple ci-dessous).
-*     - les getter/(setter) d'un paramètre passé dans une classe sont générés automatiquement.
-*
-*  Tout ceci rend la syntaxe Scala plus concise. Quelques exemples pour vous en convaincre...
-*  En Scala, il n'existe pas de constructeurs explicites. En réalité, il n'y en a qu'un seul par classe,
-*  généré automatiquement avec les paramètres de la classe et on ne peut pas le surcharger ou le changer.
-*/
-
-  /**
-  *   En Java, on aurait
+  *  To define a class, we use the keyword 'class'.
+  *  Inside a class we can define fields and methods.
+  *  Once again, everything is public by default.
   *
-  *     class ClassJava {
+  *  There are some specificities though :
+  *     - we can define val/var parameters to a class (see the example bellow)
+  *     - getters and setters for such parameters are automatically provided by the compiler
   *
-  *       final String name;
+  *  This makes the Scala syntax way more concise than its Java counterpart :
+  *
+  *   In Java we would write :
+  *
+  *     public class ClassJava {
+  *
+  *       String name;
   *
   *       public String getName() {
   *         return this.name;
   *       }
+  *
   *       public void setName(String name) {
   *         this.name = name;
   *       }
   *     }
-  */
-
-  /**
-  *   Et en Scala
+  *
+  *
+  *   The exact Scala equivalent would be :
   *
   *     class ClassScala(var name: String)
+  *
+  *   The generated getters/setters do not have get/set in their names, so we would use them like so :
+  *
+  *     println(classScalaInstance.name)
+  *
+  *     classScalaInstance.name = "new Name"
+  *
   */
 
 class e1_classes extends HandsOnSuite {
 
-  // Remarquez que l'on peut se passer des '{}' !
+  // Notice that we can omit the {} if the class' body is empty
   class ClassWithValParameter(val name: String)
+
   /**
-  * Dans les cas où l'on a un paramètre immuable, on obtient naturellement un getter mais pas de setter
+  * When we define an immutable parameter (field) no setter is generated
   */
-  exercice("Le paramètre val définit un getter") {
+  exercise("A getter is generated for a val parameter (field)") {
     val aClass = new ClassWithValParameter("name goes here")
     aClass.name should be(__)
   }
 
   class ClassWithVarParameter(var description: String)
-  /**
-  * Dans les cas où l'on a un paramètre mutable, on obtient naturellement un getter et un setter
-  */
-  exercice("Le paramètre var définit un getter et un setter") {
+
+  exercise("A getter and a setter are generated for a var parameter (field)") {
     val aClass = new ClassWithVarParameter("description goes here")
     aClass.description should be(__)
 
@@ -65,7 +66,7 @@ class e1_classes extends HandsOnSuite {
 
 
   /**
-  * Enfin on peut définir un paramètre privé mutable
+  * We can also define private parameters (fields)
   */
   class ClassWithPrivateVarFields(private var name: String){
     override def toString: String = name
@@ -74,9 +75,9 @@ class e1_classes extends HandsOnSuite {
     }
   }
 
-  exercice("champs privé mutable d'une classe") {
+  exercise("Mutable private field of a class") {
     val aClass = new ClassWithPrivateVarFields("name")
-    // NOTE: aClass.name n'est pas accessible
+    // NOTE: aClass.name is not accessible from the outside
 
     aClass.toString should be(__)
 

@@ -71,7 +71,7 @@ class testEventSourcing extends HandsOnSuite {
                                             "L'Event Sourcing, une opportunité pour votre businezz !",
                                             "bla bla bla")
 
-  exercice("Ajout de post") {
+  exercise("Ajout de post") {
     val postId = PostId.generate()
 
     val posts = Posts.fromHistory().apply(PostAdded(postId,articleBiaiséSurlES))
@@ -81,7 +81,7 @@ class testEventSourcing extends HandsOnSuite {
     posts.get(postId).get.content should be(articleBiaiséSurlES)
   }
 
-  exercice("modification de post") {
+  exercise("modification de post") {
     val postId = PostId.generate()
 
     val posts = Posts.fromHistory(PostAdded(postId, articleBiaiséSurlES))
@@ -93,7 +93,7 @@ class testEventSourcing extends HandsOnSuite {
     post.get.content should be(articleUnPeuPlusSérieux)
   }
 
-  exercice("suppression d'un post") {
+  exercise("suppression d'un post") {
     val postId = PostId.generate()
 
     val posts = Posts.fromHistory(PostAdded(postId, articleUnPeuPlusSérieux))
@@ -103,7 +103,7 @@ class testEventSourcing extends HandsOnSuite {
     posts.apply(PostDeleted(postId)).get(postId) should be('empty)
   }
 
-  exercice("versionning") {
+  exercise("versionning") {
 
     /* ....*/
 

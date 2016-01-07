@@ -78,7 +78,7 @@ class e3_on_a_besoin_de_la_covariance extends HandsOnSuite {
   }
 
 
-  exercice("on peut ajouter des items au sac") {
+  exercise("on peut ajouter des items au sac") {
 
     val s0 = Sac(0)
 
@@ -91,7 +91,7 @@ class e3_on_a_besoin_de_la_covariance extends HandsOnSuite {
   }
 
 
-  exercice("Un peu comme avant, l'application de fonction dans le conteneur") {
+  exercise("Un peu comme avant, l'application de fonction dans le conteneur") {
     val petitSacDeZero = Sac(0,Set("un portable"))
 
     petitSacDeZero.map(x => x + 1) match {
@@ -105,7 +105,7 @@ class e3_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
 
 
-  exercice("La combinaison de Sac") {
+  exercise("La combinaison de Sac") {
 
     val petitSacDeZero = Sac(0,Set("un portable"))
 
@@ -122,7 +122,7 @@ class e3_on_a_besoin_de_la_covariance extends HandsOnSuite {
     }
   }
 
-  exercice("Le filtrage") {
+  exercise("Le filtrage") {
     val petitSacDeZero = Sac(0,Set("un portable"))
 
     assert(petitSacDeZero.filter(x => x > 1).isEmpty)

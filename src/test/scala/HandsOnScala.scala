@@ -34,17 +34,17 @@ class premiers_pas extends HandsOn {
     new e0_vars_vals,
     new e1_classes,
     new e2_case_classes,
-    new e3_boucle_for
+    new e3_for_loops_and_comprehensions
   )
 }
 
 class pas_suivant extends HandsOn {
   override def nestedSuites = List(
-    new e4_listes,
+    new e4_lists,
     new e5_maps,
     new e6_sets,
     new e7_option,
-    new e8_fonctions_de_plus_haut_niveau,
+    new e8_functions_and_higher_order_functions,
     new e9_extracteurs_et_patterns
   )
 }

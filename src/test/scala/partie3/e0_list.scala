@@ -69,7 +69,7 @@ class e0_list extends HandsOnSuite {
     def filter(fonction:A => Boolean):List[A] = ???
   }
 
-  exercice("création") {
+  exercise("création") {
 
     List() should be(Nil)
 
@@ -77,12 +77,12 @@ class e0_list extends HandsOnSuite {
 
   }
 
-  exercice("map") {
+  exercise("map") {
     List(1,2,3).map(x => x + 1) should be(List(2,3,4))
   }
 
 
-  exercice("union") {
+  exercise("union") {
 
     List(1,2,3).union(List(4,5)) should be(List(1,2,3,4,5))
 
@@ -95,7 +95,7 @@ class e0_list extends HandsOnSuite {
 
   }
 
-  exercice("flatMap") {
+  exercise("flatMap") {
 
     val combinaison = for (a <- List("A","B"); i <- List(1,2)) yield (a + i)
 
@@ -103,7 +103,7 @@ class e0_list extends HandsOnSuite {
 
   }
 
-  exercice("filter") {
+  exercise("filter") {
 
     List(1,2,3).filter(x => x > 1) should be(List(2,3))
 

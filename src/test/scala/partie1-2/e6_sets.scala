@@ -15,7 +15,7 @@ class e6_sets extends HandsOnSuite {
   /**
   * Création d'un Set
   */
-  exercice("Création d'un Set") {
+  exercise("Création d'un Set") {
     val mySet = Set("Sud", "Est", "Ouest", "Nord")
     mySet.size should be(__)
 
@@ -26,7 +26,7 @@ class e6_sets extends HandsOnSuite {
   /**
   * Quelques opérations : les fonctions +, -, --  et contains
   */
-  exercice("Opérations sur les Sets") {
+  exercise("Opérations sur les Sets") {
     // addition
     val mySet = Set("Sud", "Est", "Sud")
     val aNewSet = mySet + "Nord"

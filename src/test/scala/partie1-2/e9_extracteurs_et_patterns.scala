@@ -15,7 +15,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
   * Un objet compagnon est un singleton portant le même nom que la classe,
   * et peut être considéré comme une boite à outils statiques d’une classe.
   */
-  exercice("Un extracteur est le contraire d’un constructeur") {
+  exercise("Un extracteur est le contraire d’un constructeur") {
     class Email(val value:String)
     object Email { def unapply(email:Email):Option[String]=Option(email.value)}
 
@@ -34,7 +34,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
  /**
   * Les extracteurs fonctionnent avec plusieurs valeurs
   */
-  exercice("les extracteurs fonctionnent aussi avec plusieurs valeurs") {
+  exercise("les extracteurs fonctionnent aussi avec plusieurs valeurs") {
     class Email(val value:String, val spamRatio:Integer)
     object Email {
       def unapply(email:Email):Option[(String,Integer)] = Option((email.value,email.spamRatio))
@@ -51,7 +51,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
   * Créer une case classe définit automatiquement un extracteur
   * pour cette case classe
   */
-  exercice("Un extracteur est définit automatiquement pour toute case classe") {
+  exercise("Un extracteur est définit automatiquement pour toute case classe") {
     case class Email(val value:String)
 
     val mailstring = "foo@bar.com"
@@ -77,7 +77,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
  /**
   * le pattern matching peut être utilisé sur des chaines
   */
-  exercice("le pattern matching peut être utilisé comme un switch/case") {
+  exercise("le pattern matching peut être utilisé comme un switch/case") {
     val string="B"
 
     val actual = "B" match {
@@ -103,7 +103,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
 
  
 
-  exercice("le pattern matching peut être utilisé avec des case classes pour capturer des valeurs") {
+  exercise("le pattern matching peut être utilisé avec des case classes pour capturer des valeurs") {
     case class A(/* le compilateur ajoute 'val' ici  */ a:String
                , /* le compilateur ajoute 'val' ici  */ b:String)
 
@@ -119,7 +119,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
     (actual) should be (__)
   }
 
-  exercice("Il n’est pas obligatoire de capturer toutes les valeurs") {
+  exercise("Il n’est pas obligatoire de capturer toutes les valeurs") {
     case class A(val a:String, val b:String)
     val a:A = new A(a="string", b="B")
 
@@ -133,7 +133,7 @@ class e9_extracteurs_et_patterns extends HandsOnSuite {
 
   
 
-  exercice("Les listes ont différents patterns") {
+  exercise("Les listes ont différents patterns") {
     val s = Seq("a","b")
     val actual = s match {
       case Seq("a","b") => "ok"

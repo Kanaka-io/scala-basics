@@ -3,26 +3,21 @@ package premiers_pas
 
 import support.HandsOnSuite
 
-
 /**
-*  1mn chrono ?
-*/
-
-/**
-*  Les val et var sont des mots-clé utilisés en Scala pour déclarer des champs.
-*  On peut rajouter le mot-clé 'private' devant pour définir des champs privés.
-*  Si rien n'est spécifié, on est par défaut en 'public' en Scala.
+*  The 'var' and 'val' keywords are used to declare new variables.
+*  We can make variables not visible from the outside by adding the keyword 'private' before the definition
+*  By default variables are public.
 *
-*     - var : permet de déclarer une variable mutable (=que l'on pourra par la suite modifier si on le veut)
+*     - var : declares a mutable variable (which value can be modified afterwards)
 *
-*     - val : permet de déclarer une variable immuable (=que l'on ne pourra plus modifier une fois initialisée)
+*     - val : declares an immutable variable (this is the most usual kind of variables)
 */
 class e0_vars_vals extends HandsOnSuite {
 
-  exercice("Les vars peuvent être réaffectées") {
+  exercise("One can change the value affected to a var after it has been declared") {
     var a = 5
     anchor(a)
-    a should be(__)
+    a should be(5)
     
     anchor(a)
 
@@ -30,18 +25,18 @@ class e0_vars_vals extends HandsOnSuite {
 
     anchor(a)
 
-    a should be(__)
+    a should be(7)
   }
 
-  exercice("Par contre les vals sont immuables (équivalent de final Java), elles ne peuvent pas être réaffectées") {
+  exercise("On the contrary, a val cannot be changed once defined") {
     val a = 5
 
-    a should be(__)
+    a should be(5)
 
     /*
-    *  Question supplémentaire :
+    *  Question :
     */
-    // Que se passe-t-il lorsque l'on ajoute ces lignes ?
+    // What would happen if we were to uncomment the following lines ?
     // a = 7
     // a should be (7)
   }
