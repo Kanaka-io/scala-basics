@@ -1,40 +1,35 @@
-Dans s'cas là.
+Scala basics.
 ==============
-Auteurs
+Authors
 -----------
 * Ludwine Probst [@nivdul](https://twitter.com/nivdul)
 * Mathieu Chataigner [@mchataigner](https://twitter.com/mchataigner)
 * Jonathan Winandy [@ahoy_jon](https://twitter.com/ahoy_jon)
 * Jean Helou [@jeanhelou](https://twitter.com/jeanhelou)
+*
 
-Pré-requis
+Prerequisites
 ------------
-Vous avez besoin :
-* D'une connexion internet 
-* De java 6 ou de java 7 (vous pouvez le vérifier en lançant java -version)
-* Un éditeur de texte (nous recommandons sublime-text)
+You will need :
+* Access to the internet 
+* A recent version of java (6 or above)
+* Your favorite text editor (it's better if it can highlight scala syntax)
 
-Lancer le Hands-on
+Launch the hands-on session
 ------------
 
-Vous pouvez lancer le hands-on en tapant 
-* ```./handson``` sous linux/mac
-* ```handson.bat``` sous windows 
+In this directory, just run 
+* ```./handson``` on linux/osx
+* ```handson.bat``` on windows 
 
-Ces scripts lancent SBT (scala build tool) en arrière plan préconfiguré avec des commandes pour jouer le hands-on. La commande principale est : 
+These scripts launch SBT (the Scala Build Tool), once in the SBT session, just type :
 
     go
 
-Cette commande lance le premier test et surveille les fichiers, chaque fois que vous modifiez un fichier elle rejoue le test en cours, une fois qu'un test est passé, la commande passe au test suivant.
+This launches the hands-on itself. Now your duty is to fill the blanks in the files that are under `src/test/scala` (except `HandsOn.scala` which contains only utility code).
 
-Il y a d'autres commandes qui permettent de lancer chaque chapitre indépendament:
-* ```partie1-1``` - découverte des bases du langage, variables mutables & immutables, classes, case classe et ```for expresssions```
-* ```partie1-2``` - api des listes, maps, sets, option, fonctions de plus haut niveau, extracteurs et pattern matching
-* ```partie2``` - comprendre le fonctionnement de map et de flatMap dans différents contextes, initiation simple à la variance
-* ```partie3``` - construire une implementation de List immutable, construire un stream (liste infinie évaluée à la demande)
-* ```partie4``` - (bonus) Introduction aux TypeClasses
-* ```partie5``` - (bonus) Revisiter map et flatmap dans un cas plus complexe
-* ```partie6``` - (bonus) Un exemple d'event sourcing
+The tests will run each time you modify a file, showing errors if any, and advancing through the exercises as you solve them.
 
-Compléter l'exercice prends plusieurs heures, n'hésitez pas a demander de l'aide sur [la mailing list du PSUG](https://groups.google.com/forum/?fromgroups#!forum/paris-scala-user-group)
+Have fun !
+
 

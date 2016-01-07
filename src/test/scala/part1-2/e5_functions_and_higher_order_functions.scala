@@ -1,4 +1,4 @@
-package pas_suivant
+package next_steps
 
 import support.HandsOnSuite
 
@@ -51,7 +51,7 @@ import support.HandsOnSuite
   *
   *
 */
-class e8_functions_and_higher_order_functions extends HandsOnSuite {
+class e5_functions_and_higher_order_functions extends HandsOnSuite {
 
   exercise("We can attach functions to variables") {
     /**

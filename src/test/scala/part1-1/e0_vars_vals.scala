@@ -1,4 +1,4 @@
-package premiers_pas
+package first_steps
 
 
 import support.HandsOnSuite
@@ -17,7 +17,7 @@ class e0_vars_vals extends HandsOnSuite {
   exercise("One can change the value affected to a var after it has been declared") {
     var a = 5
     anchor(a)
-    a should be(5)
+    a should be(__)
     
     anchor(a)
 
@@ -25,13 +25,13 @@ class e0_vars_vals extends HandsOnSuite {
 
     anchor(a)
 
-    a should be(7)
+    a should be(__)
   }
 
   exercise("On the contrary, a val cannot be changed once defined") {
     val a = 5
 
-    a should be(5)
+    a should be(__)
 
     /*
     *  Question :

@@ -21,9 +21,9 @@ libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1"
 
-addCommandAlias("partie1-1", "~ test-only premiers_pas")
+addCommandAlias("partie1-1", "~ test-only first_steps")
 
-addCommandAlias("partie1-2", "~ test-only pas_suivant")
+addCommandAlias("partie1-2", "~ test-only next_steps")
 
 addCommandAlias("partie2", "~ test-only we_need_to_go_deeper")
 

@@ -1,10 +1,7 @@
-import premiers_pas._
-import pas_suivant._
+import first_steps._
+import next_steps._
 import we_need_to_go_deeper._
 import cons_et_nil._
-import bonus_event_sourcing._
-import type_classes._
-import un_sac_avec_des_items._
 
 import org.scalatest._
 import support.CustomStopper
@@ -19,42 +16,38 @@ class HandsOn extends Suite {
 
 class HandsOnScala extends HandsOn {
   override def nestedSuites = List(
-    new premiers_pas,
-    new pas_suivant,
+    new first_steps,
+    new next_steps,
     new we_need_to_go_deeper,
-    new cons_et_nil,
-    new type_classes,
-    new un_sac_avec_des_items,
-    new bonus_event_sourcing
+    new cons_et_nil
   )
 }
 
-class premiers_pas extends HandsOn {
+class first_steps extends HandsOn {
   override def nestedSuites = List(
     new e0_vars_vals,
     new e1_classes,
     new e2_case_classes,
-    new e3_for_loops_and_comprehensions
+    new e3_for_loops_and_comprehensions,
+    new e4_pattern_matching
   )
 }
 
-class pas_suivant extends HandsOn {
+class next_steps extends HandsOn {
   override def nestedSuites = List(
     new e4_lists,
-    new e5_maps,
-    new e6_sets,
-    new e7_option,
-    new e8_functions_and_higher_order_functions,
-    new e9_extracteurs_et_patterns
+    new e5_functions_and_higher_order_functions,
+    new e6_option,
+    new e7_maps,
+    new e8_sets
   )
 }
 
 class we_need_to_go_deeper extends HandsOn {
   override def nestedSuites = List(
-    new e0_une_histoire_de_sacs,
-    new e1_un_sac_comme_generique,
-    new e2_un_sac_algebrique,
-    new e3_un_sac_covariant
+    new e0_bags,
+    new e1_generic_bag,
+    new e2_algebraic_bag
 
   )
 }
@@ -63,27 +56,5 @@ class cons_et_nil extends HandsOn {
   override def nestedSuites = List(
     new e0_list,
     new e1_bonus_stream
-  )
-}
-
-class type_classes extends HandsOn {
-  override def nestedSuites = List(
-    new testJson,
-    new client.testJsonClient
-  )
-}
-
-class un_sac_avec_des_items extends HandsOn {
-  override def nestedSuites = List(
-    new e0_une_mise_en_abime,
-    new e1_un_peu_plus_generique,
-    new e2_un_peu_plus_algebrique,
-    new e3_on_a_besoin_de_la_covariance
-  )
-}
-
-class bonus_event_sourcing extends HandsOn {
-  override def nestedSuites = List(
-    new testEventSourcing
   )
 }
