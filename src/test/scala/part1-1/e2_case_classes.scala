@@ -26,6 +26,15 @@ class e2_case_classes extends HandsOnSuite {
   case class Person(firstname: String, lastname: String, age: Int = 0, phone: String = "") // we can set default values to some parameters
 
 
+
+  /**
+    * Equality
+    *
+    * In Scala, equality is structural, that means that the '==' operation compares the values passed to
+    * it, and not the references, like it would do in Java
+    */
+
+
   exercise("Creating instances of case classes is easy !") {
 
 
@@ -40,12 +49,6 @@ class e2_case_classes extends HandsOnSuite {
     (d2 == d4) should be(__)
   }
 
-  /**
-    * Equality
-    *
-    * In Scala, equality is structural, that means that the '==' operation compares the values passed to
-    * it, and not the references, like it would do in Java
-    */
   exercise("Case classes have an equals method, that 'just works'") {
 
     val p1 = new MyDog("Rex", "Chihuahua")
