@@ -22,7 +22,7 @@ class e2_case_classes extends HandsOnSuite {
   /**
     * In the following exercises, we will work with the two case classes bellow
     */
-  case class MyDog(name: String, race: String) // by default, paramteers are 'public val'
+  case class MyDog(name: String, race: String) // by default, parameters are 'public val'
   case class Person(firstname: String, lastname: String, age: Int = 0, phone: String = "") // we can set default values to some parameters
 
 
@@ -91,10 +91,10 @@ class e2_case_classes extends HandsOnSuite {
     //d1.name = "Scooby Doo"
   }
 
-  exercise("We can 'update' instance using copy") {
+  exercise("We can 'update' an instance using copy") {
     val d1 = MyDog("Scooby", "Doberman")
 
-    val d2 = d1.copy(name = "Scooby Doo") // creates a copy with the name changed
+    val d2 = d1.copy(name = "Scooby Doo") // creates a copy with a different value for the field name
 
     d1.name should be(__)
     d1.race should be(__)
@@ -126,8 +126,8 @@ class e2_case_classes extends HandsOnSuite {
     p2.age should be(0)
     p2.phone should be(__)
 
-    p3.firstname should be(__)
-    p3.lastname should be("Professor")
+    p3.lastname should be(__)
+    p3.firstname should be("Professor")
     p3.age should be(0)
     p3.phone should be(__)
 

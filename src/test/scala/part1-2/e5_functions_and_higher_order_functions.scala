@@ -76,10 +76,7 @@ class e5_functions_and_higher_order_functions extends HandsOnSuite {
   exercise("Local functions") {
     def result = List(1, 2, 3) map (__)
 
-    // Notice that when a function have no parameters, we don't need
-    // parenthesis to call it
     result should be(List(2, 3, 4))
-
 
     def shorterSyntax = List(1, 2, 3) map ( _ * 2 )
     shorterSyntax should be(__)
@@ -100,12 +97,12 @@ class e5_functions_and_higher_order_functions extends HandsOnSuite {
     // remember, this is equivalent to addWithoutSyntaxSugar(1).apply(2)
     addWithoutSyntaxSugar(1)(2) should be(__)
 
-    //ou plus simplement
+    //or more simply
     def add(x: Int) = (y: Int) => x + y
     add(2)(3) should be(__)
 
-    def fiveAdder = add(5)
-    fiveAdder(42) should be(__)
+    def addFive = add(5)
+    addFive(42) should be(__)
   }
 
   exercise("Functions taking functions as parameters") {
@@ -114,9 +111,9 @@ class e5_functions_and_higher_order_functions extends HandsOnSuite {
     }
     makeUpper(List("abc", "xyz", "123")) should be(List("ABC", "XYZ", "123"))
 
-    def makeWhatEverYouLike(xs: List[String], transformation: String => String) = xs map transformation
+    def makeWhatheverYouLike(xs: List[String], transformation: String => String) = xs map transformation
 
-    makeWhatEverYouLike(List("ABC", "XYZ", "123"), ???) should be(List("abc", "xyz", "123"))
+    makeWhatheverYouLike(List("ABC", "XYZ", "123"), ???) should be(List("abc", "xyz", "123"))
 
     //using it inline
     List("Scala", "Erlang", "Clojure") map {
@@ -144,20 +141,22 @@ class e5_functions_and_higher_order_functions extends HandsOnSuite {
     *   a function of one parameter of type A that returns a function of one parameter of type B that returns a C
     *
     * In Scala, we can define functions in their curried form by specifying multiple parameters groups.
+    *
     * For example :
     *
     *   def addCurried(x: Int)(y: Int): Int = x + y
     *
-    * Does the same thing that :
+    * Does the same thing as :
     *
     *   def addSimple(x: Int, y: Int): Int = x + y
     *
     * But enables us to do things like this :
     *
-    *   val increment : Int => Int = addCurried(1)    which can be written more concisely :
+    *   val increment : Int => Int = addCurried(1)    which can be written more concisely as ...
+    *
     *   val increment = addCurried(1) _               notice the _ placeholder, it tells the compiler to make a function
     *                                                 out of the partially applied parameters, rather than attempting a
-    *                                                 function call (that wouldn't compile since all parameter are not
+    *                                                 function call (that wouldn't compile since all parameters are not
     *                                                 specified).
     *
     * Finally, we can transform a function of multiple parameters into its curried counterpart by calling the 'curried'

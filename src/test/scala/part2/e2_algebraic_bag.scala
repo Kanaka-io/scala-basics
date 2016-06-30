@@ -9,14 +9,14 @@ import support.HandsOnSuite
 class e2_algebraic_bag extends HandsOnSuite {
 
  /**
-   * We define Bag as what is called : an Algebraic Data Type (ADT for short).
+   * We define Bag as what is called an Algebraic Data Type (ADT for short).
    * 
    * It consist of a trait (remember, a trait is like an Java interface with default methods)
-   * and some implementations, usualy case classes or case objects.
+   * and some implementations, usually case classes or case objects.
    * 
-   * The sealed keyword signify that no class can extend this trait outside this file
+   * The sealed keyword means that no class can extend this trait outside this file
    * (this allows the compiler to know all implementations of the trait, and check 
-   * that pattern matching are exhaustive)
+   * that pattern matching expressions are exhaustive)
    * 
    */
   sealed trait Bag {
@@ -36,7 +36,7 @@ class e2_algebraic_bag extends HandsOnSuite {
     * it the "companion object" of the said trait (or class)
     */
   object Bag {
-    def apply(contenu:Int):Bag = FullBag(contenu)
+    def apply(content:Int):Bag = FilledBag(content)
   }
 
   case object EmptyBag extends Bag {
@@ -50,7 +50,7 @@ class e2_algebraic_bag extends HandsOnSuite {
     override def contentOrElse(replacement:Int):Int = replacement
   }
 
-  case class FullBag(contenu:Int) extends Bag {
+  case class FilledBag(content:Int) extends Bag {
 
     override def map(function:Int => Int):Bag = ???
 
@@ -58,7 +58,7 @@ class e2_algebraic_bag extends HandsOnSuite {
 
     override def filter(function:Int => Boolean):Bag = ???
 
-    override def contentOrElse(replacement:Int):Int = contenu
+    override def contentOrElse(replacement:Int):Int = content
   }
 
 
@@ -74,7 +74,7 @@ class e2_algebraic_bag extends HandsOnSuite {
 
     // Thanks to the sealed trait, the compiler will warn us if our match is not exhaustive
     bagOfZero.map(x => x +1) match {
-      case FullBag(content) => content should be(1)
+      case FilledBag(content) => content should be(1)
 
       case EmptyBag => fail("That bag shouldn't be empty")
     }
@@ -82,7 +82,7 @@ class e2_algebraic_bag extends HandsOnSuite {
     val bagVide=EmptyBag
 
     bagVide.map(x=>x+1) match {
-      case FullBag(_) => fail("This bag shouldn't be full")
+      case FilledBag(_) => fail("This bag shouldn't be full")
       case _ => Unit
     }
   }
@@ -95,7 +95,7 @@ class e2_algebraic_bag extends HandsOnSuite {
     val combinaison = for (two <- bagOfTwo; aHundred <- bagOfAHundred) yield( two * aHundred )
 
     combinaison match {
-      case FullBag(content) => {
+      case FilledBag(content) => {
         content should be (200)
       }
 
@@ -103,7 +103,7 @@ class e2_algebraic_bag extends HandsOnSuite {
     }
     val emtpyCombination = for (two <- EmptyBag; aHundred <- bagOfAHundred) yield( two * aHundred )
     emtpyCombination match {
-      case FullBag(_) => fail("Shouldn't be full")
+      case FilledBag(_) => fail("Shouldn't be full")
       case _ => Unit
     }
 
@@ -116,7 +116,7 @@ class e2_algebraic_bag extends HandsOnSuite {
     val bag = bagOfTwo.filter(x => x > 10)
 
     bag match {
-      case FullBag(_) => fail("this should be empty")
+      case FilledBag(_) => fail("this should be empty")
       case _  => Unit
     }
 

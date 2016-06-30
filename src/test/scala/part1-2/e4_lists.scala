@@ -47,6 +47,7 @@ class e4_lists extends HandsOnSuite {
     val b = List(1, 2, 3)
 
     (a eq b) should be(__)
+    (a == b) should be(__)
   }
 
   /**
@@ -77,6 +78,8 @@ class e4_lists extends HandsOnSuite {
     a.map(v => v * 3) should equal(__)
 
     // filter needs a function that takes an element of the list and returns a Boolean
+    // it keeps only the elements for which that function returns true
+
     a.filter(v => v % 3 == 0) should equal(__)
 
     val c = List(1, 2, 5, 8, 9)

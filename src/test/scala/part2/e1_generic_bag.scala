@@ -6,7 +6,7 @@ import support.HandsOnSuite
   * Int is a perfectly fine type, but why should we limit our Bags to it ?
   * Lets see if we can make a generic Bag !
   *
-  * You know the motto : just follow the types
+  * You know the motto : just follow the types !
   */
 class e1_generic_bag  extends  HandsOnSuite {
 
