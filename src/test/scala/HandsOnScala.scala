@@ -18,8 +18,7 @@ class HandsOnScala extends HandsOn {
   override def nestedSuites = List(
     new first_steps,
     new next_steps,
-    new we_need_to_go_deeper,
-    new cons_et_nil
+    new we_need_to_go_deeper
   )
 }
 
@@ -49,12 +48,5 @@ class we_need_to_go_deeper extends HandsOn {
     new e1_generic_bag,
     new e2_algebraic_bag
 
-  )
-}
-
-class cons_et_nil extends HandsOn {
-  override def nestedSuites = List(
-    new e0_list,
-    new e1_bonus_stream
   )
 }
