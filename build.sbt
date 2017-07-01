@@ -1,5 +1,4 @@
-scalaVersion in ThisBuild := "2.10.3"
-
+scalaVersion in ThisBuild := "2.12.2"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 
@@ -19,7 +18,7 @@ libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "1.9.1"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0"
 
 addCommandAlias("partie1-1", "~ test-only first_steps")
 
