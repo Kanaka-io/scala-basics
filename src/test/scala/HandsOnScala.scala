@@ -6,13 +6,14 @@ import support.{HandsOnSuite, ReportToTheStopper}
 
 class HandsOn extends Suite {
 
-
+/*
   override def run(testName: Option[String], args: Args): Status =
     super.run(testName, args.copy(reporter = new ReportToTheStopper(args.reporter), stopper = new Stopper {
       override def stopRequested: Boolean = HandsOnSuite.cancelRemaining
 
-      override def requestStop(): Unit = HandsOnSuite.cancelRemaining = true
+      override def requestStop(): Unit = {}
     }))
+    */
 }
 
 class HandsOnScala extends HandsOn {

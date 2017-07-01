@@ -45,7 +45,7 @@ object MyFunSuite  {
         val split = if (errorCtxs.isEmpty) "" else "\n...\n"
 
 
-        Some((errorCtxs ::: (split  :: testCtx(inTest.min) :: Nil)).mkString("\n"))
+        Some((errorCtxs ::: (split  :: testCtx((0 :: inTest).min) :: Nil)).mkString("\n"))
 
       }
 

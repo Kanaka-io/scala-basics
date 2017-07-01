@@ -84,6 +84,7 @@ class ReportToTheStopper(other: Reporter) extends Reporter {
             sendFail(failure, e.suiteName, e.testName)
           //ça ne devrait pas arriver
           case Some(e) =>
+            e.printStackTrace
             println("something went wrong")
           //ça non plus, un TestFailed a normalement une excepetion attachée
           case None =>
@@ -147,18 +148,10 @@ trait HandsOnSuite extends MyFunSuite with Matchers {
   def exercise(testName:String)(testFun: Unit)(implicit suite: MyFunSuite, anchorRecorder: AnchorRecorder):Unit = macro RecorderMacro.apply
 
 
-
-  /*override protected def test(testName: String, tags: Tag*)(testFun: => Unit):Unit
-
-
-  = macro RecorderMacro.apply  */
-
-
   override def run(testName: Option[String], args: Args): Status =
     super.run(testName, args.copy(
       reporter = new ReportToTheStopper(args.reporter), stopper = new Stopper {
         override def stopRequested: Boolean = HandsOnSuite.cancelRemaining
-
         override def requestStop(): Unit = HandsOnSuite.cancelRemaining = true
       })
     )
