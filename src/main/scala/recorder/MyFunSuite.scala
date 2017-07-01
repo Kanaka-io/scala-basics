@@ -38,14 +38,16 @@ object MyFunSuite  {
 
       def ctx(errorLines: List[Int]):Option[String] = {
         def isInTest(line:Int):Boolean = (line >= testExpressionLineStart && line <= testExpressionLineEnd)
+
         val (inTest, outTest) = errorLines.partition(isInTest)
 
         val errorCtxs = outTest.sorted.map(errorCtx)
 
         val split = if (errorCtxs.isEmpty) "" else "\n...\n"
 
+        val inTest2 = if(inTest.isEmpty) List(0) else inTest
 
-        Some((errorCtxs ::: (split  :: testCtx((0 :: inTest).min) :: Nil)).mkString("\n"))
+        Some((errorCtxs ::: (split  :: testCtx(inTest2.min) :: Nil)).mkString("\n"))
 
       }
 
@@ -75,7 +77,7 @@ object MyFunSuite  {
           val mes = exceptionMessage(e)
           mes match {
             case "__" =>
-              val notimpl = e.getStackTrace()(2)
+              val notimpl = e.getStackTrace()(3)
               val location = exceptionToLocation(notimpl)
 
               throw new MyTestPendingException(mes
@@ -84,8 +86,8 @@ object MyFunSuite  {
                 , Some(location)
               )
             case _ =>
-              val notimpl = e.getStackTrace()(1)
-              val secondLineNumber = e.getStackTrace()(2).getLineNumber
+              val notimpl = e.getStackTrace()(2)
+              val secondLineNumber = e.getStackTrace()(3).getLineNumber
               val location = exceptionToLocation(notimpl)
               throw new MyNotImplException(mes
                 , ctx(List(notimpl.getLineNumber, secondLineNumber))
