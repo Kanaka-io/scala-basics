@@ -10,3 +10,5 @@ ivyrepo
 sbtboot
 sbt/repository
 sbt/sbt
+\#*#
+.ensime*

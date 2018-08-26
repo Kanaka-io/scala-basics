@@ -1,4 +1,4 @@
-scalaVersion in ThisBuild := "2.12.2"
+scalaVersion in ThisBuild := "2.12.6"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 
@@ -20,18 +20,18 @@ libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0"
 
-addCommandAlias("partie1-1", "~ test-only first_steps")
+addCommandAlias("partie1-1", "~ testOnly first_steps")
 
-addCommandAlias("partie1-2", "~ test-only next_steps")
+addCommandAlias("partie1-2", "~ testOnly next_steps")
 
-addCommandAlias("partie2", "~ test-only we_need_to_go_deeper")
+addCommandAlias("partie2", "~ testOnly we_need_to_go_deeper")
 
-addCommandAlias("partie3", "~ test-only cons_et_nil")
+addCommandAlias("partie3", "~ testOnly cons_et_nil")
 
-addCommandAlias("partie4", "~ test-only type_classes")
+addCommandAlias("partie4", "~ testOnly type_classes")
 
-addCommandAlias("partie5", "~ test-only un_sac_avec_des_items")
+addCommandAlias("partie5", "~ testOnly un_sac_avec_des_items")
 
-addCommandAlias("partie6", "~ test-only bonus_event_sourcing")
+addCommandAlias("partie6", "~ testOnly bonus_event_sourcing")
 
-addCommandAlias("go", "~ test-only HandsOnScala")
+addCommandAlias("go", "~ testOnly HandsOnScala")
