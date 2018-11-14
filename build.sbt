@@ -12,8 +12,6 @@ showTiming := false
 // disable printing a message indicating the success or failure of running a task
 showSuccess := false
 
-offline := true
-
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value
